@@ -20,6 +20,7 @@ public class App
       // System.out.println(fact);
        
        Session se = fact.openSession();
+       se.beginTransaction();
        //inserting the data into db
 //       Transaction tx = se.beginTransaction();
 //      // se.save(st);
@@ -39,9 +40,21 @@ public class App
 //       tx.commit();
        
        //delete data
-       student st = se.get(student.class, 3);
-       Transaction tx = se.beginTransaction();
-       se.remove(st);
-       tx.commit();
+//       student st = se.get(student.class, 3);
+//       Transaction tx = se.beginTransaction();
+//       se.remove(st);
+//       tx.commit();
+       
+       person p = new person();
+       AadharCard ac = new AadharCard(111,"vidya","btm","female",p);
+       p.setId(101);
+       p.setNickname("vid");
+       p.setCard(ac);
+       
+       se.persist(p);
+       se.persist(ac);
+       
+       se.getTransaction().commit();
+       
     }
 }

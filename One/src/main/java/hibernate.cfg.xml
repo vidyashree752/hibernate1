@@ -14,7 +14,7 @@
 	    <property name="hibernate.hbm2ddl.auto">create</property>
 	    <property name="show_sql">true</property>
 	
-	    <mapping class="manyTo.One.person"/>
-		 <mapping class="manyTo.One.Bike"/>
+	    <mapping class="com.manytomany.Tech"/>
+		 <mapping class="com.manytomany.Trainer"/>
 	</session-factory>
 </hibernate-configuration>
